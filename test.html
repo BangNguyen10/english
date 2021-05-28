@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <title>Anh Van</title>
+</head>
+<body>
+    <style>
+        
+        .box001 {
+            
+            width: 40px;
+            height: 35px;
+            margin: 12px;
+            padding:10px;
+            text-align:center;
+            border: 2px solid black;
+            font-family: bord;
+            font-size:30px;
+            border-radius: 8px;
+            border: 2px solid black;
+            background-color: white;
+        }
+
+        .box002 {
+            float: left;
+            width: 80px;
+            height: 28px;
+            margin: 15px;
+            margin-left: 25px;
+            margin-bottom: 30px;
+            margin-top: 25px;
+            text-align: center;
+            padding: 7px;
+            border: 2px solid black;
+            font-family: bord;
+            font-size:25px;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: red;
+            color:white;
+            
+        }
+
+        
+        #boxes{
+            border: 2px solid black;
+            width: 710px;
+            background-image: url("a7dc336c7ded88b3d1fc.jpg");
+            height: 450px;
+            position: absolute;
+            left: 27%;
+            bottom: 27%;
+            border-radius: 9px;
+        }
+
+        #div4
+        {
+            border: 2px solid black;
+            width: 150px;
+            height: 515px;
+            position: absolute;
+            left: 15%;
+            bottom: 18%;
+            border-radius: 9px;
+            background-color: antiquewhite;
+        }
+
+        #btn1
+        {
+            position: absolute;
+            left: 27%;
+            top: 75%;
+            border: 2px solid black;
+            height: 50px;
+            width: 350px;
+            border-radius: 8px;
+            background-color: antiquewhite;
+            font-family: bord;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        #btn2
+        {
+            position: absolute;
+            left: 51.5%;
+            top: 75%;
+            border: 2px solid black;
+            height: 50px;
+            width: 350px;
+            border-radius: 8px;
+            background-color: antiquewhite;
+            font-family: bord;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        #message001
+        {
+            
+            height: 220px;
+            width: 240px;
+            text-align: center;
+            display:none;
+            margin-right: 45px;
+            float: right;
+            border-radius: 10px;
+           
+        }
+
+        #footer
+        {
+            width: 100%;
+            height: 30px;
+            position: absolute;
+            bottom:0;
+            left:0;
+            background-color: black;
+            text-align: center;
+            color: white;
+            padding-top : 10px;
+        }
+    </style>
+    <p style="margin-left: 26%;font-size:20px;padding: 10px;">Score: <text id="score001">0</text></p>
+<div id="div4">
+    <div class="box002" ondrop="drop001(event)">
+        <text ondragstart="dragStart001(event)" draggable="true" id="target001" value="1">1</text>
+    </div>
+
+    <div class="box002" ondrop="drop002(event)">
+        <text ondragstart="dragStart001(event)" draggable="true" id="target002" value="2">2</text>
+    </div>
+
+    <div class="box002" ondrop="drop003(event)">
+        <text ondragstart="dragStart001(event)" draggable="true" id="target003" value="3">3</text>
+    </div>
+
+    <div class="box002" ondrop="drop004(event)">
+        <text ondragstart="dragStart001(event)" draggable="true" id="target004" value="4">4</text>
+    </div>
+
+    <div class="box002" ondrop="drop005(event)">
+        <text ondragstart="dragStart001(event)" draggable="true" id="target005"value="5">5</text></div>
+    
+    </div>
+
+    <br /><br /><br /><br />
+    
+<div id="boxes" >
+    <div class="box001" style="left: 45%; position: absolute;" ondrop="put001(event)" ondragover="allowDrop001(event)" id="place001" ></div>
+
+    <div class="box001" style="left: 17%; position: absolute;top:15%;" ondrop="put002(event)" ondragover="allowDrop002(event)" id="place002" ></div>
+
+    <div class="box001" style="margin-left: 78%;top: 45%;position: absolute;" ondrop="put003(event)" ondragover="allowDrop003(event)" id="place003"></div>
+
+    <div class="box001" style="margin-left: 43%;top:65%;position: absolute;" ondrop="put004(event)" ondragover="allowDrop004(event)" id="place004" ></div>
+
+    <div class="box001" style="top: 75%;position: absolute;" ondrop="put005(event)" ondragover="allowDrop005(event)" id="place005" ></div><br /><br /><br />
+</div>
+    <button id="btn1" onclick="submit001()">Submit</button>
+    <button id="btn2" onclick="location.reload()">Again</button>
+    
+    <img id="message001" src="111.gif" >
+
+    <footer id="footer" >
+        <div class="mb-1" >
+           
+            <small>
+                <i class="fas fa-home" style="padding-right: 7px;"></i><a href="http://www.hiennhaneduz.edu.vn/">Hiền Nhân EduZ</a> - © 2021 made with <i class="fa fa-heart" style="color:red;  "></i> by Bang Nguyen
+                    
+            </small>
+        </div>
+    </footer>
+
+    <script>
+    var b = 0;
+    b++;
+function dragStart001(event) {
+    event.dataTransfer.setData("choice001", event.target.id);
+}
+
+
+function allowDrop001(event) {
+    event.preventDefault();
+}
+
+function allowDrop002(event) {
+    event.preventDefault();
+}
+
+function allowDrop003(event) {
+    event.preventDefault();
+}
+
+function allowDrop004(event) {
+    event.preventDefault();
+}
+
+function allowDrop005(event) {
+    event.preventDefault();
+}
+
+function put001(event) {
+    var data = event.dataTransfer.getData("choice001");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+    
+}
+
+function put002(event) {
+    var data = event.dataTransfer.getData("choice001");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+    
+}
+
+function put003(event) {
+    var data = event.dataTransfer.getData("choice001");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+        
+}
+
+function put004(event) {
+    var data = event.dataTransfer.getData("choice001");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+        
+}
+
+function put005(event) {
+    var data = event.dataTransfer.getData("choice001");
+    event.target.appendChild(document.getElementById(data));
+score001.innerHTML = b++;
+        
+}
+
+
+
+function drop001(event) {
+    event.preventDefault();
+    
+}
+
+function drop002(event) {
+    event.preventDefault();
+
+}
+
+function drop003(event) {
+    event.preventDefault();
+
+}
+
+function drop004(event) {
+    event.preventDefault();
+}
+
+function drop005(event) {
+    event.preventDefault();
+}
+
+
+function submit001() {
+if (b > 5) {
+    message001.style.display = 'block';
+    place001.style = "background-color: #045FB4;color: white;left: 45%; position: absolute;"
+    place002.style = "background-color: #045FB4;color: white;left: 17%; position: absolute;top:15%;"
+    place003.style = "background-color: #045FB4;color: white;margin-left: 78%;top: 45%;position: absolute;"
+    place004.style = "background-color: #045FB4;color: white;margin-left: 43%;top:65%;position: absolute;"
+    place005.style = "background-color: #045FB4;color: white;top: 75%;position: absolute;"
+    
+    place001.innerHTML = "1";
+    place002.innerHTML = "2";
+    place003.innerHTML = "3";
+    place004.innerHTML = "4";
+    place005.innerHTML = "5";
+//message001.innerHTML = "Congratulations.";
+}
+}
+    </script>
+</body>
+</html>
